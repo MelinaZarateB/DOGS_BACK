@@ -12,7 +12,10 @@ const morgan = require('morgan');
 server.use(morgan('dev'))
 /* Importacion y ejecucion de Cors - Comando: npm i cors */
 const cors = require('cors');
-server.use(cors())
+//server.use(cors())
+server.use(cors({
+    origin: 'https://dogs-front-bd5a.vercel.app'
+  }));
 /* Middleware traductor que permite leer cuando llega data por req.body(generalmente metodo POST) */
 server.use(express.json())
 
