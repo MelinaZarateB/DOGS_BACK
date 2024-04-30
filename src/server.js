@@ -1,4 +1,5 @@
 const express = require('express')
+const { conn } = require('./db')
 const routes = require('./routes/index.js');
 const cors = require('cors');
 /* Configuracion del middleware - Comando: npm i morgan */
@@ -13,7 +14,7 @@ server.use(express.json())
 /* Importacion y ejecucion de Cors - Comando: npm i cors */
 server.use(cors())
 
-server.use(routes);
+server.use('/', routes);
 
 /* Se realiza la sincronizacion de sequelize con la DB y luego se levanta el servidor(si se sincronizo bien) */
 module.exports = server;
