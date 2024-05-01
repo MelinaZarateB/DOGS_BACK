@@ -10,7 +10,7 @@ const getDogsName = async (req, res) => {
     try{
         const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`) 
 
-        const dogsAPI = data?.map((dog) => {
+        const dogsAPI = await data?.map((dog) => {
             return {
                 id: dog.id,
                 image: dog.image.url,
