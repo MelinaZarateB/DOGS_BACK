@@ -10,7 +10,7 @@ const getDogsAPI = async () => {
     const dogsAPI = data?.map((dog) => {
         return {
             id: dog.id,
-            image: dog.image.url,
+            image: dog.image?.url,
             name: dog.name,
             height: dog.height.metric,
             weight: dog.weight.metric, // "18 - 29"
