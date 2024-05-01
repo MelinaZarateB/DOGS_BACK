@@ -8,7 +8,7 @@ const getDogsName = async (req, res) => {
     let name = req.query.name
 
     try{
-        const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds/?api_key=${API_KEY}`) 
+        const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`) 
 
         const dogsAPI = data?.map((dog) => {
             return {
