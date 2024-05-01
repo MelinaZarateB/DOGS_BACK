@@ -4,12 +4,12 @@ const axios = require('axios');
 const { API_KEY } = process.env;
 
 const getDogsAPI = async () => {
-    const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`) 
+    const { data } = await axios.get('https://api.thedogapi.com/v1/breeds?api_key=' + API_KEY) 
 
     const dogsAPI = data?.map((dog) => {
         return {
             id: dog.id,
-            image: dog.image?.url,
+            image: dog.image.url,
             name: dog.name,
             height: dog.height.metric,
             weight: dog.weight.metric, // "18 - 29"
