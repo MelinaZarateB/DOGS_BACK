@@ -5,7 +5,7 @@ const axios = require('axios');
 
 const getTemperaments = async (req, res) => {
     try{
-        const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds/?api_key=${API_KEY}`)
+        const { data } = await axios.get(`https://api.thedogapi.com/v1/breeds?api_key=${API_KEY}`)
 
         let temperaments = [];
         data?.map((dog) => {
