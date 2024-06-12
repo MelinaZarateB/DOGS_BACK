@@ -4,9 +4,12 @@ const axios = require('axios');
 const { API_KEY } = process.env;
 
 const getDogsAPI = async () => {
-    const { data } = await axios.get('https://api.thedogapi.com/v1/breeds?api_key=live_IZ6MS7Sbms9Zo0S2jnidv8oZmDKVtBrnVnmYfqQ9u7KyhylBRdpn9DzGwF3sSDGw') 
+   // const { data } = await axios.get('https://api.thedogapi.com/v1/breeds?api_key=live_IZ6MS7Sbms9Zo0S2jnidv8oZmDKVtBrnVnmYfqQ9u7KyhylBRdpn9DzGwF3sSDGw') 
+    const response = await fetch('https://api.thedogapi.com/v1/breeds?api_key=live_IZ6MS7Sbms9Zo0S2jnidv8oZmDKVtBrnVnmYfqQ9u7KyhylBRdpn9DzGwF3sSDGw')
+    .then((response) => response.json())
 
-    const dogsAPI = await data?.map((dog) => {
+
+    const dogsAPI = await response?.map((dog) => {
         return {
             id: dog.id,
             image: dog.image.url,
@@ -66,5 +69,3 @@ module.exports = {
     getDogsDB
 }
 
-
-// caract
