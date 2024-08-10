@@ -7,7 +7,7 @@ const { allDogs } = require('./getAllDogs')
 const getTemperaments = async (req, res) => {
     try{
         //const { data } = await axios.get('https://api.thedogapi.com/v1/breeds?api_key=live_IZ6MS7Sbms9Zo0S2jnidv8oZmDKVtBrnVnmYfqQ9u7KyhylBRdpn9DzGwF3sSDGw')
-        const response = await fetch('https://api.thedogapi.com/v1/breeds?api_key=live_IZ6MS7Sbms9Zo0S2jnidv8oZmDKVtBrnVnmYfqQ9u7KyhylBRdpn9DzGwF3sSDGw')
+        const response = await fetch('https://api.thedogapi.com/v1/breeds?api_key=live_h6gLcZfI9cZ62ALK7SxRX1dmlljpmrJ7aYN52rA7fPz2FFhxsP5L1pAajBIAEffEw')
         const data = await response.json()
         let temperaments = [];
         data?.map((dog) => {
